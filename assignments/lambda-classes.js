@@ -10,6 +10,7 @@ class Person {
     }
 }
 
+// stubs
 const jim = new Person({
     name: 'Jim',
     age: 29,
@@ -23,6 +24,7 @@ const jane = new Person ({
     location: 'Experiment, GA',
     gender: 'F'
 });
+
 
 class Instructor extends Person {
     constructor(props) {
@@ -39,6 +41,7 @@ class Instructor extends Person {
     }
 }
 
+// stubs
 const jill = new Instructor ({
     name: 'Jill',
     age: 31,
@@ -58,6 +61,7 @@ const john = new Instructor ({
     favLanguage: 'Python',
     catchPhrase: 'Ain\'t nobody got time for that.'
 });
+
 
 class Student extends Person {
     constructor(props) {
@@ -80,6 +84,7 @@ class Student extends Person {
     }
 }
 
+// stubs
 const jenny = new Student ({
     name: 'Jenny',
     age: 20,
@@ -100,6 +105,7 @@ const jake = new Student ({
     favSubjects: ['HTML', 'Machine Learning', 'Discrete Math']
 });
 
+
 class ProjectManager extends Instructor {
     constructor(props) {
         super(props);
@@ -114,6 +120,7 @@ class ProjectManager extends Instructor {
     }
 }
 
+// stubs
 const jesse = new ProjectManager ({
     name: 'Jesse',
     age: 29,
@@ -137,3 +144,15 @@ const jax = new ProjectManager ({
     gradClassName: 'CS40',
     favInstructor: 'John'
 });
+
+
+// tests
+jim.speak(); // -> Hello my name is Jim, I am from Dogtown, AL.
+console.log(jane.location); // -> Experiment, GA
+jill.demo('closures'); // -> Today we are learning about closures.
+console.log(jill.favLanguage); // -> Haskell
+john.grade(jenny, 'CSS preprocessing'); // -> Jenny receives a perfect score on CSS preprocessing.
+jenny.listSubjects(); // -> Jenny's favorite subjects are: JavaScript, Algorithms, Big Data
+jake.PRAssignment('flexbox'); // -> Jake has submitted a PR for flexbox.
+jesse.standUp('web17'); // -> Jesse announces to web17, @channel standy times!​​​​​
+jax.debugsCode(jake, 'React'); // -> Jax debugs Jake's code on React.
