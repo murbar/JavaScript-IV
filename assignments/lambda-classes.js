@@ -39,6 +39,10 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}.`)
     }
+    evaluate(student) {
+        // change student's grade by +/- 7 pts
+        student.grade += Math.floor(Math.random() * 14) + -7 
+    }
 }
 
 // stubs
@@ -69,6 +73,7 @@ class Student extends Person {
         this.previousBackground = props.previousBackground;
         this.className = props.className;
         this.favSubjects = props.favSubjects;
+        this.grade = props.grade;
     }
     listSubjects() {
         console.log(`${this.name}'s favorite subjects are:`);
@@ -82,6 +87,13 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}.`);
     }
+    graduate() {
+        if (this.grade > 70) {
+            console.log(`${this.name} graduates! Congrats.`);
+        } else {
+            console.log(`${this.name} doesn't make the grade. Better hit the books!`);
+        }
+    }
 }
 
 // stubs
@@ -92,7 +104,8 @@ const jenny = new Student ({
     gender: 'F',
     previousBackground: 'Candlestick Maker',
     className: 'CS44',
-    favSubjects: ['JavaScript', 'Algorithms', 'Big Data']
+    favSubjects: ['JavaScript', 'Algorithms', 'Big Data'],
+    grade: 78
 });
 
 const jake = new Student ({
@@ -102,7 +115,8 @@ const jake = new Student ({
     gender: 'M',
     previousBackground: 'Ditch Digger',
     className: 'CS44',
-    favSubjects: ['HTML', 'Machine Learning', 'Discrete Math']
+    favSubjects: ['HTML', 'Machine Learning', 'Discrete Math'],
+    grade: 71
 });
 
 
@@ -156,3 +170,9 @@ jenny.listSubjects(); // -> Jenny's favorite subjects are: JavaScript, Algorithm
 jake.PRAssignment('flexbox'); // -> Jake has submitted a PR for flexbox.
 jesse.standUp('web17'); // -> Jesse announces to web17, @channel standy times!​​​​​
 jax.debugsCode(jake, 'React'); // -> Jax debugs Jake's code on React.
+
+// stretch
+console.log(jake.grade); // -> 71
+jill.evaluate(jake)
+console.log(jake.grade); // new grade
+jake.graduate(); // will Jake graduate???
