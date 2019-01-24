@@ -10,6 +10,20 @@ class Person {
     }
 }
 
+const jim = new Person({
+    name: 'Jim',
+    age: 29,
+    location: 'Dogtown, AL',
+    gender: 'Fluid'
+});
+
+const jane = new Person ({
+    name: 'Jane',
+    age: 26,
+    location: 'Experiment, GA',
+    gender: 'F'
+});
+
 class Instructor extends Person {
     constructor(props) {
         super(props);
@@ -24,6 +38,26 @@ class Instructor extends Person {
         console.log(`${student.name} receives a perfect score on ${subject}.`)
     }
 }
+
+const jill = new Instructor ({
+    name: 'Jill',
+    age: 31,
+    location: 'Big Arm, MT',
+    gender: 'F',
+    specialty: 'React',
+    favLanguage: 'Haskell',
+    catchPhrase: 'Yippie-Ki-Yay, Motherlover!'
+});
+
+const john = new Instructor ({
+    name: 'John',
+    age: 23,
+    location: 'Chicken, AK',
+    gender: 'M',
+    specialty: 'CSS Grid',
+    favLanguage: 'Python',
+    catchPhrase: 'Ain\'t nobody got time for that.'
+});
 
 class Student extends Person {
     constructor(props) {
@@ -46,6 +80,26 @@ class Student extends Person {
     }
 }
 
+const jenny = new Student ({
+    name: 'Jenny',
+    age: 20,
+    location: 'Hazard, NE',
+    gender: 'F',
+    previousBackground: 'Candlestick Maker',
+    className: 'CS44',
+    favSubjects: ['JavaScript', 'Algorithms', 'Big Data']
+});
+
+const jake = new Student ({
+    name: 'Jake',
+    age: 22,
+    location: 'Hell, MI',
+    gender: 'M',
+    previousBackground: 'Ditch Digger',
+    className: 'CS44',
+    favSubjects: ['HTML', 'Machine Learning', 'Discrete Math']
+});
+
 class ProjectManager extends Instructor {
     constructor(props) {
         super(props);
@@ -59,3 +113,27 @@ class ProjectManager extends Instructor {
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
     }
 }
+
+const jesse = new ProjectManager ({
+    name: 'Jesse',
+    age: 29,
+    location: 'Kickapoo, KS',
+    gender: 'M',
+    specialty: 'Pancakes',
+    favLanguage: 'JavaScript',
+    catchPhrase: 'That\'s what she said.',
+    gradClassName: 'CS40',
+    favInstructor: 'Jill'
+});
+
+const jax = new ProjectManager ({
+    name: 'Jax',
+    age: 27,
+    location: 'Imalone, WI',
+    gender: 'F',
+    specialty: 'Forms',
+    favLanguage: 'Assembly',
+    catchPhrase: 'Your mom goes to college.',
+    gradClassName: 'CS40',
+    favInstructor: 'John'
+});
